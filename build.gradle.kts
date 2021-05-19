@@ -2,12 +2,15 @@ plugins {
     kotlin("multiplatform") version "1.5.0"
     kotlin("plugin.serialization") version "1.5.0"
     id("com.android.library") version "7.0.0-alpha15"
-    id("com.apollographql.apollo") version "2.5.6"
+    id("com.apollographql.apollo") version "2.5.7-SNAPSHOT"
 }
 
 repositories {
     mavenCentral()
     google()
+    maven {
+        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+    }
 }
 
 kotlin {
@@ -35,7 +38,7 @@ kotlin {
                     }
                 }
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
-                implementation("com.apollographql.apollo:apollo-runtime-kotlin:2.5.6")
+                implementation("com.apollographql.apollo:apollo-runtime-kotlin:2.5.7-SNAPSHOT")
             }
         }
         val commonTest by getting {
